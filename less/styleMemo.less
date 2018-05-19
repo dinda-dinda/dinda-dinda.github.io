@@ -1,0 +1,316 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.Text {
+    font-family: 'Electrolize';
+    text-align: center;
+    padding: 0.3em;
+    font-size: 1em;
+}
+
+.Flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+main {
+    .Flex;
+    background: purple;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+aside {
+    .Flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background: purple;
+    color: white;
+
+    width: 20vw;
+    height: 100vh;
+}
+
+.Titulo {
+    align-content: flex-start;
+    padding: 0.7em;
+    .Text;
+    font-size: 3em;
+}
+
+h3 {
+    .Text;
+    color: violet;
+    font-size: 2em;
+}
+
+#instrucciones {
+    .Flex;
+    align-content: flex-start;
+    flex-direction: column;
+    .Text;
+}
+
+#instrucciones span {
+    .Text;
+}
+
+p {
+    .Text;
+    padding: 0.3em;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+#play {
+    background: black;
+    width: 80vw;
+    height: 100vh;
+
+    .Flex;
+    justify-content: space-around;
+
+    padding-top: 10vh;
+    border-radius: 40px 20px;
+}
+
+#tablero {
+    .Flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 90vh;
+    height: 80vh;
+
+    background-color: gray;
+    margin: 5px;
+    border: 2px;
+    color: blue;
+    border-radius: 40px 20px;
+}
+
+#tablero figure {
+    width: 20vh;
+    height: 20vh;
+    background: violet;
+    margin: 5px;
+    border-color: violet;
+    border-width: 2px;
+    border-radius: 40px 20px;
+}
+
+#tablero figure img {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 60px 40px;
+}
+
+.notChecked {
+    opacity: 0.9;
+    filter: alpha(opacity=5);
+    padding: 1px;
+    background-color: pink;
+    transition: transform .2s;
+    /* Animation */
+    margin: 0 auto;
+    transition-timing-function: ease;
+    -webkit-animation: spin 4s infinite linear;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(5deg);
+    }
+    75% {
+        -webkit-transform: rotate(-5deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+.checked {
+
+    opacity: 0.9;
+    filter: alpha(opacity=5);
+    padding: 1px;
+    background-color: gray;
+
+    transition: transform .2s;
+    /* Animation */
+    margin: 0 auto;
+    -webkit-animation: color-me-in 4s infinite linear;
+}
+
+@keyframes color-me-in {
+    0% {
+        background: #141414;
+    }
+    10% {
+        background: purple;
+    }
+    /* Adding a step in the middle */
+    70% {
+        background: silver;
+    }
+    80% {
+        background: purple;
+    }
+    100% {
+        background: #141414;
+    }
+}
+
+
+.Entrada {
+    .Flex;
+    .Text;
+
+    flex-direction: column;
+
+    -webkit-animation: color-me-in 4s infinite linear;
+    background: silver;
+    width: 50vw;
+    height: 80vh;
+    border-radius: 40px 20px;
+}
+
+input {
+    .Text;
+    .Flex;
+    flex-direction: column;
+}
+
+label {
+    .Text;
+    .Flex;
+    flex-direction: column;
+}
+
+button {
+    .Text;
+    text-align: center;
+}
+
+select {
+    .Text;
+    text-align: center;
+}
+
+#backgroundEntrada {
+    .Flex;
+    padding-top: 5vw;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    #backgroundEntrada{
+        width: 100vw;
+        height: 100vh;
+        .Flex; 
+    }
+    #newGameWindow {
+        width: 90vw;
+        height: 80vh;
+    }
+    main {
+        width: 100vw;
+        height: 100vh;
+
+        .Flex; 
+        flex-direction: column;
+    }
+    #infoJuego{
+    .Flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+        width: 100vw;
+        height: 20vh;
+        margin:0;
+        padding: 0;
+    }
+
+    #play {
+        width: 100vw;
+        height: 78vh;
+        
+        .Flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        padding-top: 0;
+
+    }
+    p{
+        align-items: baseline;
+        justify-content: flex-end;
+
+        font-size: 0.6em;
+    }
+
+    #tablero {
+        width: 92vw;
+        height: 75vh;
+        
+        .Flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: nowwrap;
+        
+      
+    }
+    figure {
+       max-width: 30vw;
+        max-height: 30vw;
+    }
+    img {
+        max-width: 30vw;
+        max-height: 30vw;
+    
+    }
+    .Titulo{
+        font-size: 2em;
+        padding: 0;
+        margin:0;
+    }
+    #instrucciones{
+        display: none;
+    }
+    #intentos{
+        display: table-cell;
+
+
+    }
+}
+
+
+
+/* For tablets: */
+
+@media only screen and (min-width: 600px) {
+    .Titulo{
+        font-size: 2em;
+        padding: 0;
+        margin:0;
+    }
+}
+
